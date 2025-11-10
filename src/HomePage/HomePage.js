@@ -20,7 +20,7 @@ function HomePage() {
 
   const fetchAnunturi = async () => {
     try {
-      const response = await fetch("http://34.66.244.219:8080/api/anunturi");
+      const response = await fetch("https://assess-westminster-informal-ports.trycloudflare.com/api/anunturi");
       const data = await response.json();
 
     console.log("=== DATELE PRIMITE DE LA SERVER ===");
@@ -208,7 +208,7 @@ function HomePage() {
               <div className="anunt-card-image">
                 {anunt.images && anunt.images.length > 0 ? (
                   <img
-                    src={`http://34.66.244.219:8080${anunt.images[0]}`}
+                    src={`https://assess-westminster-informal-ports.trycloudflare.com${anunt.images[0]}`}
                     alt={anunt.title}
                   />
                 ) : (
