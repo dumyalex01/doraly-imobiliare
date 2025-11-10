@@ -1,6 +1,8 @@
 import "./AddForm.css";
 import { useState } from "react";
 
+const link = "https://assess-westminster-informal-ports.trycloudflare.com"
+
 function AddForm({ showHeader = true }) {
   const [formData, setFormData] = useState({
     title: "",
@@ -9,7 +11,7 @@ function AddForm({ showHeader = true }) {
     zone: "Pitesti",
     inchiriere: false,
     price: "",
-    type: "Garsoniera" // Acesta este câmpul corect pentru backend
+    type: "Garsoniera"
   });
   const [images, setImages] = useState([]);
 
@@ -37,7 +39,7 @@ function AddForm({ showHeader = true }) {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://34.66.244.219:8080/api/anunturi", {
+      const response = await fetch("https://assess-westminster-informal-ports.trycloudflare.com/api/anunturi", {
         method: "POST",
         body: data,
         headers: {

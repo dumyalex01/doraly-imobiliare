@@ -18,7 +18,7 @@ function EditForm() {
   useEffect(() => {
     const fetchAds = async () => {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://34.66.244.219:8080/api/anunturi", {
+      const response = await fetch("https://assess-westminster-informal-ports.trycloudflare.com/api/anunturi", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -64,7 +64,7 @@ function EditForm() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://34.66.244.219:8080/api/anunturi/${selectedAd.id}`,
+        `https://assess-westminster-informal-ports.trycloudflare.com/api/anunturi/${selectedAd.id}`,
         {
           method: "PUT",
           body: data,
