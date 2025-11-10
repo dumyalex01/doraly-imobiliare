@@ -83,7 +83,7 @@ function DeleteForm() {
         <div className="selected-anunt-info">
           <h3>Detalii anunț selectat:</h3>
           {anunturi
-            .filter(anunt => anunt.id == selectedValue)
+            .filter(anunt => anunt.id === selectedValue)
             .map(anunt => (
               <div key={anunt.id} className="anunt-details">
                 <p><strong>Titlu:</strong> {anunt.title}</p>

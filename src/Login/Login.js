@@ -26,6 +26,7 @@ function Login() {
 
         const jwt = response.data.token;
         localStorage.setItem("token",jwt);
+        localStorage.setItem("message",message)
         console.log(jwt);
         
         navigate('/HomeAdmin');

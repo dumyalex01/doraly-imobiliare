@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
@@ -17,9 +17,6 @@ function HomePage() {
     fetchAnunturi();
   }, []);
 
-  useEffect(() => {
-    applyFilters();
-  }, [filters, anunturi]);
 
   const fetchAnunturi = async () => {
     try {
@@ -41,30 +38,30 @@ function HomePage() {
     }
   };
 
-  const applyFilters = () => {
-    let filtered = [...anunturi];
+  const applyFilters = useCallback(() => {
+  let filtered = [...anunturi];
 
-    if (filters.type) {
-      filtered = filtered.filter(
-        (anunt) =>
-          anunt.type &&
-          anunt.type.toLowerCase().includes(filters.type.toLowerCase())
-      );
-    }
+  if (filters.type) {
+    filtered = filtered.filter(
+      (anunt) =>
+        anunt.type &&
+        anunt.type.toLowerCase().includes(filters.type.toLowerCase())
+    );
+  }
 
-    if (filters.zona) {
-      filtered = filtered.filter((anunt) =>
-        anunt.zone.toLowerCase().includes(filters.zona.toLowerCase())
-      );
-    }
+  if (filters.zona) {
+    filtered = filtered.filter((anunt) =>
+      anunt.zone.toLowerCase().includes(filters.zona.toLowerCase())
+    );
+  }
 
-    if (filters.tip) {
-      const isForRent = filters.tip === "inchiriere";
-      filtered = filtered.filter((anunt) => anunt.inchiriere === isForRent);
-    }
+  if (filters.tip) {
+    const isForRent = filters.tip === "inchiriere";
+    filtered = filtered.filter((anunt) => anunt.inchiriere === isForRent);
+  }
 
-    setFilteredAnunturi(filtered);
-  };
+  setFilteredAnunturi(filtered);
+}, [anunturi, filters]);
 
   const handleFilterChange = (filterName, value) => {
     setFilters((prev) => ({
@@ -89,6 +86,10 @@ function HomePage() {
   const getUniqueValues = (key) => {
     return [...new Set(anunturi.map((anunt) => anunt[key]))].sort();
   };
+
+  useEffect(() => {
+  applyFilters();
+  }, [applyFilters]);
 
   return (
     <div className="homepage-container">
