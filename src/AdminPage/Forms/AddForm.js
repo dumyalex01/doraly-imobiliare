@@ -37,7 +37,7 @@ function AddForm({ showHeader = true }) {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://140.245.17.254:8080/api/anunturi", {
+      const response = await fetch("http://34.66.244.219:8080/api/anunturi", {
         method: "POST",
         body: data,
         headers: {
