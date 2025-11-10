@@ -23,7 +23,7 @@ function HomePage() {
 
   const fetchAnunturi = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/anunturi");
+      const response = await fetch("http://140.245.17.254:8080/api/anunturi");
       const data = await response.json();
 
     console.log("=== DATELE PRIMITE DE LA SERVER ===");
@@ -207,7 +207,7 @@ function HomePage() {
               <div className="anunt-card-image">
                 {anunt.images && anunt.images.length > 0 ? (
                   <img
-                    src={`http://localhost:8080${anunt.images[0]}`}
+                    src={`http://140.245.17.254:8080${anunt.images[0]}`}
                     alt={anunt.title}
                   />
                 ) : (

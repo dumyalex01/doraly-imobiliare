@@ -13,7 +13,7 @@ function AnuntDetails() {
   useEffect(() => {
     const fetchAnunt = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/anunturi");
+        const response = await fetch("http://140.245.17.254:8080/api/anunturi");
         const data = await response.json();
         const found = data.find(a => a.id === numericId);
         setAnunt(found);
@@ -46,7 +46,7 @@ function AnuntDetails() {
             <>
               <button className="carousel-btn left" onClick={prevImage}>◀</button>
               <img
-                src={`http://localhost:8080${anunt.images[currentIndex]}`}
+                src={`http://140.245.17.254:8080${anunt.images[currentIndex]}`}
                 alt={`img-${currentIndex}`}
                 className="carousel-main-img"
                 onClick={() => setLightboxOpen(true)}
@@ -62,7 +62,7 @@ function AnuntDetails() {
           {anunt.images.length > 1 && (
             <div className="carousel-thumbs">
               {anunt.images.map((img, idx) => {
-                const src = `http://localhost:8080${img}`;
+                const src = `http://140.245.17.254:8080${img}`;
                 return (
                   <img
                     key={idx}
@@ -100,7 +100,7 @@ function AnuntDetails() {
       {lightboxOpen && (
         <div className="lightbox" onClick={() => setLightboxOpen(false)}>
           <img 
-            src={`http://localhost:8080${anunt.images[currentIndex]}`} 
+            src={`http://140.245.17.254:8080${anunt.images[currentIndex]}`} 
             alt="Zoom" 
             className="lightbox-img"
           />

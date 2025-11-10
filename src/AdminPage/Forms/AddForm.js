@@ -29,17 +29,15 @@ function AddForm({ showHeader = true }) {
     e.preventDefault();
     const data = new FormData();
     
-    // Adaugă toate câmpurile formData în FormData
     Object.keys(formData).forEach((key) => {
       data.append(key, formData[key]);
     });
     
-    // Adaugă imaginile
     images.forEach((file) => data.append("images", file));
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8080/api/anunturi", {
+      const response = await fetch("http://140.245.17.254:8080/api/anunturi", {
         method: "POST",
         body: data,
         headers: {
@@ -49,7 +47,6 @@ function AddForm({ showHeader = true }) {
 
       if (response.ok) {
         alert("✅ Anunț trimis cu succes!");
-        // Reset form after success
         setFormData({
           title: "",
           descript: "",
@@ -120,7 +117,7 @@ function AddForm({ showHeader = true }) {
         <div className="form-group">
           <label>Tip proprietate:</label>
           <select
-            name="type" // Schimbat din "tipProprietate" în "type"
+            name="type"
             value={formData.type}
             onChange={handleChange}
           >

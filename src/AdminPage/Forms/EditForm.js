@@ -9,17 +9,16 @@ function EditForm() {
     descript: "",
     surface: "",
     zone: "",
-    type: "Garsoniera", // ✅ schimbat din room_number în type
+    type: "Garsoniera",
     inchiriere: false,
     price: "",
   });
   const [images, setImages] = useState([]);
 
-  // 🔹 Preluăm toate anunțurile din backend
   useEffect(() => {
     const fetchAds = async () => {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8080/api/anunturi", {
+      const response = await fetch("http://140.245.17.254:8080/api/anunturi", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -28,7 +27,6 @@ function EditForm() {
     fetchAds();
   }, []);
 
-  // 🔹 Când selectezi un anunț, populăm formularul
   const handleSelect = (e) => {
     const id = e.target.value;
     const ad = ads.find((a) => a.id === parseInt(id));
@@ -66,7 +64,7 @@ function EditForm() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:8080/api/anunturi/${selectedAd.id}`,
+        `http://140.245.17.254:8080/api/anunturi/${selectedAd.id}`,
         {
           method: "PUT",
           body: data,

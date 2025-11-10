@@ -12,7 +12,7 @@ function DeleteForm() {
 
   const fetchAnunturi = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/anunturi");
+      const response = await fetch("http://140.245.17.254:8080/api/anunturi");
       const data = await response.json();
       setAnunturi(data);
     } catch (error) {
@@ -36,7 +36,7 @@ function DeleteForm() {
     setLoading(true);
     
     try {
-      const response = await fetch(`http://localhost:8080/api/anunturi/${selectedValue}`, {
+      const response = await fetch(`http://140.245.17.254:8080/api/anunturi/${selectedValue}`, {
         method: "DELETE"
       });
 
