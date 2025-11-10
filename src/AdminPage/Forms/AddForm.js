@@ -1,7 +1,6 @@
 import "./AddForm.css";
 import { useState } from "react";
 
-const link = "https://assess-westminster-informal-ports.trycloudflare.com"
 
 function AddForm({ showHeader = true }) {
   const [formData, setFormData] = useState({
