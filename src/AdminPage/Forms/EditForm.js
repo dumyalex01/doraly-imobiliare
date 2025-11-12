@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./EditForm.css";
+import "./Forms.css"
 
 function EditForm() {
   const [ads, setAds] = useState([]);

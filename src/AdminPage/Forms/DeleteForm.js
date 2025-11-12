@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./DeleteForm.css";
+import "./Forms.css"
 
 function DeleteForm() {
   const [selectedValue, setSelectedValue] = useState("");

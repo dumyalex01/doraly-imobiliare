@@ -1,6 +1,5 @@
-import "./AddForm.css";
 import { useState } from "react";
-
+import "./Forms.css"
 
 function AddForm({ showHeader = true }) {
   const [formData, setFormData] = useState({
