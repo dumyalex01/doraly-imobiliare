@@ -62,7 +62,7 @@
     }
 
     .navbar-list li button {
-        font-size: 28px;
+        font-size: 20px;
         padding: 8px 16px;
     }
 }
@@ -81,7 +81,7 @@
 
     .navbar-list li button {
         width: 80%;
-        font-size: 22px;
+        font-size: 30px;
     }
 
     .content-container {
@@ -90,8 +90,47 @@
 }
 
 @media (max-width: 480px) {
-    .navbar-list li button {
-        font-size: 18px;
-        padding: 6px 12px;
-    }
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;            
+    gap: 10px;                 
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    width: fit-content;         
+    margin: 0 auto;            
+  }
+
+  .navbar-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .navbar-list li button {
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e0e6ef;
+    color: #333;
+    cursor: pointer;
+    flex: 0 1 auto;            
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+  .navbar-list li button:hover {
+    background-color: #d2d8e2;
+  }
 }

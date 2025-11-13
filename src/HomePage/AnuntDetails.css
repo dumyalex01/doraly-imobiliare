@@ -190,7 +190,6 @@
   margin: 50px 0;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .anunt-main-card {
     flex-direction: column;
@@ -202,5 +201,18 @@
   
   .carousel-main-img {
     height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .description-text {
+    max-height: none;
+    overflow-y: visible;
+    font-size: 16px;
+    padding: 12px;
+    line-height: 1.6;
+    max-width: 300px;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
 }
