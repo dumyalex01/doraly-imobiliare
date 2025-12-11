@@ -77,7 +77,7 @@ function Login() {
         
         <div className="buttons">
           <button id="login" onClick={handleLogin}>Login</button>
-          <button id="guest" onClick={handleGuestLogin}>Continua ca vizitator</button>
+          <button id="guest" onClick={handleGuestLogin}>Vezi anunturile</button>
         </div>
       </div>
       <div className="text">
