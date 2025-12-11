@@ -1,200 +1,298 @@
-
 .container {
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('./casuta.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('./casuta.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   width: 100%;
   height: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding: 20px;
+  overflow: hidden;
 }
 
-@keyframes fadeIn {
-  0% {
+.login-form-small {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.login-toggle-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.login-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.small-form-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.3s ease;
+  min-width: 250px;
+}
+
+@keyframes slideDown {
+  from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(-10px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.containerLogin {
-  width: 400px;
-  max-width: 90%;
-  height: auto;
-  padding: 30px 20px;
-  border-radius: 25px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  backdrop-filter: blur(10px);
-  animation: fadeIn 1.5s ease-in-out;
-  margin: 20px;
-}
-
-.hdr h1 {
-  margin-top: 10px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 2em;
-  color: black;
-  text-align: center;
-}
-
-.nameContainer,
-.passwordContainer {
-  width: 100%;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.iconName,
-.iconPassword {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  flex-shrink: 0;
-}
-
-.iconName {
-  background-image: url('./user.png');
-}
-
-.iconPassword {
-  background-image: url('./padlock.png');
-}
-
-.input {
-  flex: 1;
-  height: 100%;
-  margin-left: 10px;
-}
-
-.input input {
-  width: 100%;
-  height: 100%;
-  padding: 8px 10px;
-  box-sizing: border-box;
-  border: 1px solid black;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
-  width: 100%;
-}
-
-.buttons #login,
-.buttons #guest {
-  width: 80%;
-  border: none;
-  font-size: 16px;
-  background-color: aqua;
-  padding: 12px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-style: italic;
-  font-weight: bold;
-  margin: 10px 0;
-
-}
-
-.buttons #login:hover,
-.buttons #guest:hover {
-  background-color: #00e0e0;
-}
-
-.text {
-  border: 5px #00FF00 double;
-  color: #00FF00;
-  font-weight: bold;
-  text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
-  background: black;
-  padding: 20px;
-  border-radius: 20px;
-  animation: fadeIn 4s ease-in-out;
-  max-width: 400px;
-  margin: 20px;
-}
-
-.textClass {
+.small-form-content h3 {
+  margin: 0 0 15px 0;
+  color: #333;
   font-size: 18px;
   text-align: center;
 }
 
-h2 {
-  font-size: 20px;
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #667eea;
+}
+
+.login-btn-small {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.login-btn-small:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 10px;
   text-align: center;
 }
 
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+  max-width: 800px;
+  padding: 40px;
+  animation: fadeIn 1s ease;
+}
 
-  .containerLogin {
-    width: 80%;
-    margin-left: 0;
-  }
+.text-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  animation: fadeInUp 1.2s ease;
+}
 
-  .text {
-    max-width: 80%;
-    font-size: 16px;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-@media (max-width: 600px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-  }
 
-  .containerLogin {
-    width: 80%;
-    padding: 20px 15px;
-    border-radius: 20px;
-  }
+.text-box h1 {
+  font-size: 2.5em;
+  color: white;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-  .hdr h1 {
-    font-size: 1.6em;
-  }
+.subtitle {
+  font-size: 1.2em;
+  color: #f0f0f0;
+  margin-bottom: 25px;
+}
 
-  .buttons #login,
-  .buttons #guest {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
-  }
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  font-size: 1.1em;
+}
 
-  .text {
-    width: 70%;
-    font-size: 14px;
-  }
+.features p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 5px 0;
+}
 
-  .textClass {
-    font-size: 15px;
-  }
+.main-cta-button {
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+  color: white;
+  border: none;
+  padding: 20px 50px;
+  font-size: 1.5em;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 114, 255, 0.4);
+  animation: pulse 2s infinite;
+}
 
-  h2 {
-    font-size: 17px;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(0, 114, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 114, 255, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(0, 114, 255, 0.4);
+  }
+}
+
+.main-cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 114, 255, 0.6);
+}
+
+.arrow-icon {
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.main-cta-button:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+.alternative-login {
+  color: white;
+  margin-top: 20px;
+}
+
+.agent-login-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.agent-login-btn:hover {
+  background: white;
+  color: #0072ff;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px;
+  }
+  
+  .text-box h1 {
+    font-size: 2em;
+  }
+  
+  .main-cta-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+  }
+  
+  .login-form-small {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .small-form-content {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-box {
+    padding: 20px;
+  }
+  
+  .text-box h1 {
+    font-size: 1.5em;
+  }
+  
+  .subtitle {
+    font-size: 1em;
+  }
+  
+  .features {
+    font-size: 0.9em;
+  }
+  
+  .main-cta-button {
+    padding: 12px 25px;
+    font-size: 1em;
   }
 }
