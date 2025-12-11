@@ -85,17 +85,6 @@ function Login() {
             {message && <div className="error-message">{message}</div>}
           </div>
         )}
-=======
-        <div className="buttons">
-          <button id="login" onClick={handleLogin}>Login</button>
-          <button id="guest" onClick={handleGuestLogin}>Vezi anunturile</button>
-        </div>
-      </div>
-      <div className="text">
-        <h2>Bine ati venit pe site-ul agentiei Doraly!</h2>
-        <p className="textClass">Locul in care aveti ocazia sa gasiti cele mai bune oferte</p>
-        <p className="textClass">din judetul Arges</p>
->>>>>>> c50d99080c41cbcb101ce7433d083410426881eb
       </div>
 
       <div className="main-content">
