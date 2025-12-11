@@ -5,6 +5,7 @@ import AdminPage from './AdminPage/AdminPage';
 import HomePage from './HomePage/HomePage';
 import AnuntDetails from './HomePage/AnuntDetails';
 import ProtectedRoute from './ProtectedRoute';
+import InformationPage from './InformationPage/InformationPage';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/Imobiliare" element = {<InformationPage/>}/>
         <Route path="/Home" element = {<HomePage/>} />
         <Route path="/anunt/:id" element={<AnuntDetails/>} />
 
