@@ -55,7 +55,7 @@ function Login() {
           <FaUser /> {showLoginForm ? '×' : 'Login'}
         </button>
         
-<<<<<<< HEAD
+
         {showLoginForm && (
           <div className="small-form-content">
             <h3>Autentificare</h3>
