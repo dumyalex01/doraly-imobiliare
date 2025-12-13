@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaArrowRight, FaUser, FaLock, FaEye } from 'react-icons/fa';
+import Footer from "../Footer"; // Dacă Footer este în același folder
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -46,74 +47,76 @@ function Login() {
   };
 
   return (
-    <div className="container">
-      <div className={`login-form-small ${showLoginForm ? 'active' : ''}`}>
-        <button 
-          className="login-toggle-btn"
-          onClick={() => setShowLoginForm(!showLoginForm)}
-        >
-          <FaUser /> {showLoginForm ? '×' : 'Login'}
-        </button>
-        
-
-        {showLoginForm && (
-          <div className="small-form-content">
-            <h3>Autentificare</h3>
-            <div className="input-group">
-              <FaUser className="input-icon" />
-              <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                onKeyPress={handleKeyPress}
-              />
-            </div>
-            <div className="input-group">
-              <FaLock className="input-icon" />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                onKeyPress={handleKeyPress}
-              />
-            </div>
-            <button className="login-btn-small" onClick={handleLogin}>
-              Autentificare
-            </button>
-            {message && <div className="error-message">{message}</div>}
-          </div>
-        )}
-      </div>
-
-      <div className="main-content">
-        <div className="text-box">
-          <h1>Bine ați venit la Agenția Doraly!</h1>
-          <p className="subtitle">Locul unde găsiți cele mai bune oferte din județul Argeș</p>
-          
-          <div className="features">
-            <p><FaEye /> Oferte exclusive</p>
-            <p><FaEye /> Consultanță specializată</p>
-            <p><FaEye /> Cele mai bune prețuri</p>
-          </div>
-        </div>
-
-        <button className="main-cta-button" onClick={handleGuestLogin}>
-          <span>Vezi anunțuri</span>
-          <FaArrowRight className="arrow-icon" />
-        </button>
-
-        <div className="alternative-login">
-          <p>Sunteți agent imobiliar?</p>
+    <div className="login-page">
+      <div className="container">
+        <div className={`login-form-small ${showLoginForm ? 'active' : ''}`}>
           <button 
-            className="agent-login-btn"
-            onClick={() => setShowLoginForm(true)}
+            className="login-toggle-btn"
+            onClick={() => setShowLoginForm(!showLoginForm)}
           >
-            Autentificați-vă aici
+            <FaUser /> {showLoginForm ? '×' : 'Login'}
           </button>
+          
+          {showLoginForm && (
+            <div className="small-form-content">
+              <h3>Autentificare</h3>
+              <div className="input-group">
+                <FaUser className="input-icon" />
+                <input
+                  type="text"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                />
+              </div>
+              <div className="input-group">
+                <FaLock className="input-icon" />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                />
+              </div>
+              <button className="login-btn-small" onClick={handleLogin}>
+                Autentificare
+              </button>
+              {message && <div className="error-message">{message}</div>}
+            </div>
+          )}
+        </div>
+
+        <div className="main-content">
+          <div className="text-box">
+            <h1>Bine ați venit la Agenția Doraly!</h1>
+            <p className="subtitle">Locul unde găsiți cele mai bune oferte din județul Argeș</p>
+            
+            <div className="features">
+              <p><FaEye /> Oferte exclusive</p>
+              <p><FaEye /> Consultanță specializată</p>
+              <p><FaEye /> Cele mai bune prețuri</p>
+            </div>
+          </div>
+
+          <button className="main-cta-button" onClick={handleGuestLogin}>
+            <span>Vezi anunțuri</span>
+            <FaArrowRight className="arrow-icon" />
+          </button>
+
+          <div className="alternative-login">
+            <p>Sunteți agent imobiliar?</p>
+            <button 
+              className="agent-login-btn"
+              onClick={() => setShowLoginForm(true)}
+            >
+              Autentificați-vă aici
+            </button>
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
