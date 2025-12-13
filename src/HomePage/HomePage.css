@@ -1,10 +1,18 @@
+/* HomePage.css */
+.homepage-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .homepage-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
-  min-height: 100vh;
+  flex: 1;
+  width: 100%;
 }
 
 .homepage-header {
